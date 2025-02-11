@@ -1,18 +1,59 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
     <script src="cordova.js"></script>
     <script src="components/loader.js"></script>
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
-    <script>
-    </script>
+
 </head>
+
 <body>
-	<br />
-    This is a template for Monaca app.
+    <h1>CALCULADORA</h1>
+
+    <input type="radio" name="" id="">
+
+    <input type="number" placeholder="valor 1" id="v1">
+    <input type="number" placeholder="valor 2" id="v2">
+    <input type="button" value="sum" id="sum">
+    <input type="button" value="sub" id="sub">
+    <input type="button" value="mult" id="mult">
+    <input type="button" value="div" id="div">
+    <input type="button" value="exp" id="exp">
+    <h2 id="result">RESULTADO: </h2>
+
+    <script defer>
+        let v1, v2, res
+        function sum(v1, v2) {
+            res = v1+v2
+        }
+        function sub(v1, v2) {
+            res = v1-2
+        }
+        function mult(v1, v2) {
+            res = v1*2
+        }
+        function div(v1, v2) {
+            res = v1/2
+        }
+        function exp(v1, v2) {
+            res = v1^2
+        }
+
+        document.querySelector("#sum").addEventListener('click', function(){
+            v1 = Number(document.querySelector("#v1").value)
+            v2 = Number(document.querySelector("#v2").value)
+
+            document.querySelector("#result").innerHTML = `RESULTADO: ${res}`
+        })
+
+        console.log(document.querySelector("#sum"));
+    </script>
 </body>
+
 </html>
